@@ -1,56 +1,53 @@
 
-# Matchmaking and Ranking System
+# Cryptocurrency Matchmaking and Ranking System
 
 ## Overview
 
-This Python script implements a matchmaking and ranking system, primarily designed for analyzing and processing user-generated data (e.g., tweets related to cryptocurrency trading). It uses ELO rating-based algorithms to evaluate participants' performance and updates scores based on their activity outcomes.
-
-Key features include:
-- Matchmaking based on user actions (e.g., "buy" and "sell").
-- ELO-based ranking adjustments.
-- Leaderboard generation and ranking tiers.
-- Historical match analysis.
-- Data export for visualization and further processing.
+This system processes cryptocurrency-related data to perform matchmaking, calculate rankings, and generate insights from user-generated actions like "buy" and "sell." It integrates data collection, processing, matchmaking, and advanced ranking algorithms using ELO-based methods.
 
 ---
 
 ## Features
 
-### 1. Matchmaking
-- Groups user actions (e.g., tweets) by coin and date.
-- Matches "buy" and "sell" users into pairs and calculates ELO changes based on their results.
-- Supports balancing teams with placeholder "BOT" players if groups are uneven.
+### 1. Data Obtaining
+Implemented in `data_obtaining.py`:
+- **Fetch Cryptocurrency Data**: Retrieves data using APIs for historical price information.
+- **Sentimental Data Extraction**: Pulls sentiment data from MongoDB collections.
+- **Top Coin Identification**: Identifies top coins based on social media mentions.
+- **Data Downloading**: Downloads coin-specific data for analysis.
 
-### 2. Ranking System
-- Calculates ELO ratings before and after each match.
-- Updates user ratings and tracks ranking changes over time.
+### 2. Data Preprocessing
+Implemented in `data_preprocessing.py`:
+- **Timestamp Rounding**: Rounds timestamps to nearest intervals for consistency.
+- **Sentiment Data Loading**: Cleans and prepares sentiment data for processing.
+- **Tweet and Coin Data Merging**: Merges tweet sentiment data with coin price data.
+- **Filtering**: Filters and refines the tweet table for relevant analysis.
 
-### 3. Data Finalization
-- Generates leaderboards with metrics such as win rate, total matches, and buy/sell actions.
-- Categorizes users into tiers: Grandmaster, Master, Diamond, Platinum, Gold, Silver, and Bronze.
+### 3. Matchmaking and Ranking
+Implemented in `matchmaking_and_ranking.py`:
+- **Matchmaking**: Pairs participants based on their actions and calculates ELO ratings.
+- **Ranking Finalization**: Generates a leaderboard with tiers (e.g., Grandmaster, Diamond).
+- **Historical Analysis**: Provides detailed insights on past matches and trends.
+- **Performance Metrics**: Calculates Sharpe ratio, maximum drawdown, and profit.
 
-### 4. Historical Analysis
-- Provides historical match data for individual participants.
-- Includes win/loss records, recent ELO trends, and coin-specific performance.
-
-### 5. Data Export
-- Exports results as CSV and JSON files:
-  - Match history (`match_history.json`).
-  - Leaderboard (`leader_board.json`).
-  - Player-specific data (`kol_data.json`).
+### 4. Main Workflow
+Implemented in `main.py`:
+- Combines data obtaining, preprocessing, and matchmaking into a cohesive pipeline.
+- Generates outputs including leaderboards, match history, and performance metrics.
 
 ---
 
 ## Requirements
 
 - Python 3.8 or later
-- Required Python libraries:
+- Required libraries:
   - pandas
   - numpy
   - plotly
   - matplotlib
   - tqdm
   - pymongo
+  - requests
 
 ---
 
@@ -58,8 +55,8 @@ Key features include:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/matchmaking-and-ranking.git
-   cd matchmaking-and-ranking
+   git clone https://github.com/your-username/cryptocurrency-ranking.git
+   cd cryptocurrency-ranking
    ```
 
 2. Install dependencies using `requirements.txt`:
@@ -67,81 +64,68 @@ Key features include:
    pip install -r requirements.txt
    ```
 
-3. Run the script:
+3. Run the main script:
    ```bash
-   python matchmaking_and_ranking.py
+   python main.py
    ```
 
 ---
 
 ## Usage
 
-### Inputs
-The script requires the following inputs:
-- **Filtered tweets data (`filtered_tweets`)**: User actions grouped by coin and date.
-- **ELO data (`elo_df`)**: Current ratings for all participants.
-- **Match history (`match_df`)**: A DataFrame to store match results.
+1. **Data Downloading**:
+   The system fetches data on cryptocurrencies, tweets, and sentiments.
 
-### Execution
-Run the script to perform matchmaking, update rankings, and generate outputs:
-```python
-python matchmaking_and_ranking.py
-```
+2. **Preprocessing**:
+   Prepares the data for matchmaking by merging and rounding timestamps.
 
-### Outputs
-- **Match Data**: `match.csv`
-- **Leaderboard**: `final_table.csv`, `leader_board.json`
-- **Historical Data**: `match_history.json`, `kol_data.json`
+3. **Matchmaking**:
+   Performs matchmaking for participants and updates their rankings.
+
+4. **Final Output**:
+   - Match history: `match_history.json`
+   - Leaderboard: `leader_board.json`
+   - Player data: `kol_data.json`
 
 ---
 
-## Functions
+## Outputs
 
-### `matchmaking(filtered_tweets, elo_df, match_df, match_id_initiate)`
-Performs matchmaking and updates ELO ratings.
-
-### `finalizing(match_df)`
-Generates the final leaderboard and calculates user metrics.
-
-### `match_history_to_json(match_df_origin, coin_dict)`
-Converts match history to JSON format for further analysis.
-
-### `generate_open_interest_data(coin, target_date, day_set=7)`
-Generates open interest data for the specified coin and date range.
-
-### `add_parameter(match_df, final_table)`
-Calculates additional performance metrics, including Sharpe ratio and maximum drawdown.
+- **Leaderboard** (`final_table.csv`): Ranks participants with metrics like ELO and win rate.
+- **Historical Data** (`match_history.json`): Stores detailed match records.
+- **Coin Insights** (`kol_data.json`): Provides in-depth analysis of user performance and trends.
 
 ---
 
-## Examples
+## Key Functions
 
-### Matchmaking and Ranking
-```python
-match_results = matchmaking(filtered_tweets, elo_df, match_df, 1)
-```
+### `data_obtaining.py`
+- `get_coin(symbol, ...)`: Fetches historical coin data.
+- `get_sentimental_data(...)`: Extracts sentiment data from tweets.
+- `downloading_top_coins(...)`: Downloads data for top-mentioned coins.
 
-### Finalize Leaderboard
-```python
-final_table, match_df_origin = finalizing(match_results)
-```
+### `data_preprocessing.py`
+- `create_tweet_table(...)`: Combines sentiment and price data for analysis.
+- `filter_tweet_table(...)`: Filters tweets for relevant matches.
 
-### Export Match History
-```python
-match_history_to_json(match_df_origin, coin_dict)
-```
+### `matchmaking_and_ranking.py`
+- `matchmaking(...)`: Conducts matchmaking and ELO calculations.
+- `finalizing(...)`: Creates the leaderboard with performance tiers.
+
+### `main.py`
+Orchestrates the entire workflow, combining data collection, preprocessing, matchmaking, and exporting results.
 
 ---
 
 ## Contribution
 
-Feel free to suggest improvements or report issues. Contributions to improve the matchmaking logic or ranking system are welcome.
+Contributions are welcome! Feel free to submit issues or pull requests to improve the system.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
 
 ---
 
@@ -154,4 +138,5 @@ plotly
 matplotlib
 tqdm
 pymongo
+requests
 ```
