@@ -5,9 +5,9 @@ StarkNest aim to simplify DeFi through composable on-chain AI agents. A powerful
 
 - 🪙 Token Operations
 
-  - Transfer SOL and SPL tokens
+  - Transfer STRK and ETH tokens
   - Check token balances
-  - Stake SOL
+  - Stake STRK and ETH
   - Deploy new tokens
   - Request faucet funds
   - Burn and close token accounts
@@ -15,10 +15,10 @@ StarkNest aim to simplify DeFi through composable on-chain AI agents. A powerful
 
 - 💱 Trading
 
-  - Integrated Jupiter Exchange support
+  - Integrated Ekubo Exchange support
   - Token swaps with customizable slippage
   - Direct routing options
-  - Buy and sell tokens with Raydium liquidity
+  - Buy and sell tokens with Ekubo liquidity
 
 - 🏦 Yield Farming
 
@@ -26,7 +26,7 @@ StarkNest aim to simplify DeFi through composable on-chain AI agents. A powerful
 
 - 🔗 LangChain Integration
 
-  - Utilize LangChain tools for enhanced blockchain interactions
+  - Utilize JS tools for enhanced blockchain interactions
   - Access a suite of tools for balance checks, transfers, token deployments, and more
 
 - 📈 Performance Tracking
