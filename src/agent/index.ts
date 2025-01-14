@@ -17,13 +17,17 @@ export class StarknetAgent {
   constructor(
     privateKey: string,
     accountAddress: string,
-    rpc = "https://starknet-mainnet.core.chainstack.com/83b2dbd5efa33f683f0fe598b459a30d"
+    rpc = "https://free-rpc.nethermind.io/mainnet-juno"
   ) {
-    this.privateKey = privateKey;
-    this.rpc = rpc;
-    this.accountAddress = accountAddress;
-    this.provider = new RpcProvider({ nodeUrl: rpc });
-    this.wallet = new Account(this.provider, accountAddress, privateKey);
+    try {
+      this.privateKey = privateKey;
+      this.rpc = rpc;
+      this.accountAddress = accountAddress;
+      this.provider = new RpcProvider({ nodeUrl: rpc });
+      this.wallet = new Account(this.provider, accountAddress, privateKey);
+    } catch (error: any) {
+      throw new Error(`Failed to initialize: ${error.message}`);
+    }
   }
 
   async getTokenBalance(tokenAddress: string) {
