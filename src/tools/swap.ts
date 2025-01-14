@@ -8,6 +8,17 @@ export const swap = async (
   tokenOut: string,
   tokenInAmount: number
 ) => {
+  const multiCallData = await getSwapData(tokenIn, tokenOut, tokenInAmount);
+  const multiCall = await wallet.execute(multiCallData);
+  const receipt = await wallet.waitForTransaction(multiCall.transaction_hash);
+  return receipt;
+};
+
+export const getSwapData = async (
+  tokenIn: string,
+  tokenOut: string,
+  tokenInAmount: number
+) => {
   const quote = await getQuote(tokenIn, tokenOut, tokenInAmount);
   if (quote && quote.splits && quote.splits.length > 0) {
     const routeArr = quote.splits;
@@ -38,7 +49,7 @@ export const swap = async (
       swaps.push(obj);
     }
 
-    const multiCall = await wallet.execute([
+    const multiCallData = [
       {
         contractAddress: tokenIn,
         entrypoint: "transfer",
@@ -71,8 +82,8 @@ export const swap = async (
           },
         }),
       },
-    ]);
-    const receipt = await wallet.waitForTransaction(multiCall.transaction_hash);
-    return receipt;
+    ];
+    return multiCallData;
   }
+  return [];
 };

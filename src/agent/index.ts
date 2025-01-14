@@ -1,5 +1,6 @@
 import { Account, RpcProvider } from "starknet";
 import {
+  getSwapData,
   getTokenBalance,
   getTokenDataByTokenAddress,
   swap,
@@ -47,6 +48,15 @@ export class StarknetAgent {
       return res;
     } catch (error: any) {
       throw new Error(`Failed to transfer token: ${error.message}`);
+    }
+  }
+
+  async getSwapCallData(tokenIn: string, tokenOut: string, amountIn: number) {
+    try {
+      const multiCallData = await getSwapData(tokenIn, tokenOut, amountIn);
+      return multiCallData;
+    } catch (error: any) {
+      throw new Error(`Failed to fetch data: ${error.message}`);
     }
   }
 
