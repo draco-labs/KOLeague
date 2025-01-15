@@ -24,7 +24,13 @@ export class StarknetAgent {
       this.rpc = rpc;
       this.accountAddress = accountAddress;
       this.provider = new RpcProvider({ nodeUrl: rpc });
-      this.wallet = new Account(this.provider, accountAddress, privateKey);
+      this.wallet = new Account(
+        this.provider,
+        accountAddress,
+        privateKey,
+        "1",
+        "0x3"
+      );
     } catch (error: any) {
       throw new Error(`Failed to initialize: ${error.message}`);
     }

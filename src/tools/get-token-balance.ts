@@ -8,5 +8,5 @@ export const getTokenBalance = async (
 ) => {
   const tokenContract = new Contract(ERC20, tokenAddress, provider);
   const balance = await tokenContract?.balanceOf(accountAddress);
-  return Number(balance);
+  return Number(balance?.balance?.low);
 };
