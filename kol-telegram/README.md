@@ -1,7 +1,7 @@
 # ELIZA & TELEGRAM BOT KOL README
 
 <p align="center">
-  <img src="/Users/yondraco/Documents/hackathon/StarkNest/kol-telegram/static/logo.jpg" alt="KOL Chat Agent" width="200">
+  <img src="./static/logo.jpg" alt="KOL Chat Agent" width="200">
 </p>
 
 ## Table of Contents
