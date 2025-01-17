@@ -12,7 +12,7 @@ const formatRelativeTime = (inputDate) => {
   const [day, month, year] = datePart.split("/").map(Number);
   const [hours, minutes, seconds] = timePart.split(":").map(Number);
   const localDate = new Date(year, month - 1, day, hours, minutes, seconds);
-  const date = new Date(localDate.toISOString()); // Chuyển sang UTC
+  const date = new Date(localDate.toISOString()); 
 
   const now = new Date();
   const nowUTC = new Date(now.toISOString());
@@ -71,7 +71,6 @@ const Carousel = ({ latestTweet }) => {
       handleNext();
     }, autoSlideInterval);
 
-    // Dọn dẹp interval khi component bị unmount
     return () => clearInterval(interval);
   }, [currentIndex]);
 
@@ -157,7 +156,7 @@ const Carousel = ({ latestTweet }) => {
         open={openImage}
         handleCancel={() => {
           setOpenImage(false);
-          setIsLoading(false); // Đảm bảo reset trạng thái khi đóng modal
+          setIsLoading(false); 
         }}
         className="w-fit"
         closed={false}
@@ -175,12 +174,12 @@ const Carousel = ({ latestTweet }) => {
                 height={900}
                 className={`object-contain w-full h-full max-h-[900px] ${isLoading ? "hidden" : "block"}`}
                 onLoad={() => {
-                  setIsLoading(false); // Tắt trạng thái loading khi ảnh tải xong
+                  setIsLoading(false);
                   console.log("Image loaded");
                 }}
                 onError={() => {
                   console.error("Image failed to load");
-                  setIsLoading(false); // Tắt loading ngay cả khi lỗi
+                  setIsLoading(false);
                 }}
               />
             </>

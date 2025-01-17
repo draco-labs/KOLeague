@@ -65,7 +65,7 @@ const DonutChart = ({ tokenList }) => {
       {
         name: 'Percentage',
         colorByPoint: true,
-        data: data, // Sử dụng mảng `data` đã tạo
+        data: data,
       },
     ],
   };

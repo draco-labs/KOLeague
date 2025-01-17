@@ -7,7 +7,7 @@ const openDB = () => {
     request.onupgradeneeded = (event) => {
       const db = event.target.result;
       if (!db.objectStoreNames.contains(storeName)) {
-        db.createObjectStore(storeName, { keyPath: "screenName" }); // Khóa chính là screenName
+        db.createObjectStore(storeName, { keyPath: "screenName" });
       }
     };
     request.onsuccess = () => resolve(request.result);
@@ -18,12 +18,11 @@ const openDB = () => {
 export const handleScreenNameClick = async (screenName, avatarUrl, twitterUrl) => {
     const db = await openDB();
   
-    // Thêm hoặc cập nhật user
     const transaction = db.transaction(storeName, "readwrite");
     const store = transaction.objectStore(storeName);
   
-    store.delete(screenName); // Xóa nếu user đã tồn tại
-    store.put({ screenName, avatarUrl, twitterUrl, addedAt: Date.now() }); // Thêm mới
+    store.delete(screenName);
+    store.put({ screenName, avatarUrl, twitterUrl, addedAt: Date.now() });
   
     const users = [];
     store.openCursor().onsuccess = (event) => {
@@ -36,7 +35,6 @@ export const handleScreenNameClick = async (screenName, avatarUrl, twitterUrl) =
   
     transaction.oncomplete = async () => {
       if (users.length > 5) {
-        // Lấy user cũ nhất
         const oldestUser = users[0];
         console.log(oldestUser)
        

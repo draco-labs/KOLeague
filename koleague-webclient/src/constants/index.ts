@@ -293,14 +293,7 @@ export const CHAIN_NAME_BY_ID = {
 export const SIGN_MESSAGE =
   "Welcome to Grinding. By signing this message, you agree with our Terms and Conditions.";
 
-// mainnet
-// export const CONTRACT_DEPLOY_BLAST =
-//   "0xD8d1E4Fd8b8D68b5A5a345ed97EF06A5CcbC8C2f";
-
 export const CONTRACT_DEPLOY_BLAST =
-  // main
-  // "0xD8d1E4Fd8b8D68b5A5a345ed97EF06A5CcbC8C2f";
-  // test
   "0xba382EF7d9F3a6860D335853Ea7E093665907F66";
 
 export const CONTRACT_FACTORY_TOKEN_BLAST =
@@ -310,16 +303,6 @@ export const CONTRACT_FACTORY_TOKEN_BLAST =
 export const CHAIN_TYPE_KEY = "activeChain";
 
 export const selectNetwork = [
-  // {
-  //   id: 0,
-  //   title: "All",
-  //   value: "0",
-  // },
-  // {
-  //   id: 1,
-  //   title: "VENOM",
-  //   value: NetworkTypeEnum.VENOM,
-  // },
   {
     id: 2,
     title: "BLAST",

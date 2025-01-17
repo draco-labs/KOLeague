@@ -15,7 +15,7 @@ const LineChart = ({recentMatches}) => {
       type: "area",
       backgroundColor: "#0d0d15",
       height: 230 ,    
-      borderColor: "#202031", // Màu viền
+      borderColor: "#202031",
       borderWidth: 1,
       borderRadius: 8,
       margin: [0, 0, 0, 0],
@@ -27,12 +27,12 @@ const LineChart = ({recentMatches}) => {
         enabled: false,
     },
     xAxis: {
-      visible: false, // Ẩn trục X hoàn toàn
+      visible: false,
       labels: {
-        enabled: false, // Tắt nhãn trục X
+        enabled: false,
       },
-      lineWidth: 0, // Không vẽ đường trục X
-      tickWidth: 0, // Ẩn các dấu tick
+      lineWidth: 0,
+      tickWidth: 0,
     },
     yAxis: {
       title: {
@@ -44,7 +44,7 @@ const LineChart = ({recentMatches}) => {
       labels: {
         enabled: false,
         formatter: function () {
-          return `${Math.round(this.value)} LP`; // Hiển thị đơn vị LP
+          return `${Math.round(this.value)} LP`;
         },
         style: {
           color: "#FFFFFF",
@@ -73,10 +73,10 @@ const LineChart = ({recentMatches}) => {
       area: {
         lineWidth: 2,
         marker: {
-          enabled: false, // Ẩn các nốt
+          enabled: false,
           states: {
             hover: {
-              enabled: true, // Hiện các nốt khi trỏ vào
+              enabled: true,
             },
           },
           radius: 5,
@@ -95,7 +95,7 @@ const LineChart = ({recentMatches}) => {
         },
         // events: {
         //   mouseOver: function () {
-        //     setHoveredValue(null); // Xóa giá trị khi trỏ ra ngoài biểu đồ
+        //     setHoveredValue(null);
         //   },
         // },
       },

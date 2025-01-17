@@ -47,7 +47,7 @@ const CombinedChart = ({  newDataLine }) => {
   console.log(newDataLine.price, ",", tweetData, ",", formatDataLine, ",", maxY, ",", minY,);
   const options = {
     chart: {
-      backgroundColor: "transparent", // Màu nền
+      backgroundColor: "transparent",
       backgroundColor: 'transparent',
       plotBackgroundColor: '#0d0d15',
       plotBorderWidth: 1,
@@ -57,51 +57,36 @@ const CombinedChart = ({  newDataLine }) => {
       // marginRight: 40,
     },
     title: {
-      text: null, // Không hiển thị tiêu đề
+      text: null,
     },
     xAxis: {
       type: "datetime",
       visible: true,
       labels: {
-        enabled: false, // Ẩn nhãn trục x
+        enabled: false, 
       },
       crosshair: {
         width: 1,
         color: "##90909C",
-        dashStyle: "Dash", // Đường nét đứt
+        dashStyle: "Dash", 
         zIndex: 5,
       },
       plotLines: [
         {
-          color: "#08EFE8", // Màu xanh
-          dashStyle: "Dash", // Nét đứt
-          value: tweetTimestamp, // Giá trị thời gian
-          width: 2, // Độ rộng của đường
-          zIndex: 5, // Độ ưu tiên hiển thị
+          color: "#08EFE8", 
+          dashStyle: "Dash",
+          value: tweetTimestamp,
+          width: 2,
+          zIndex: 5,
           label: {
 
             enabled: false,
-            visible: false, // Ẩn label
+            visible: false,
           },
         },
       ],
     },
     yAxis: [
-      // {
-      //   title: {
-      //     text: 'vol <br/>    (mm)',
-      //     style: { color: "#ffffff", textAlign: "right" },
-      //     align: "high",
-      //     rotation: 0,
-      //     x:100,
-      //     y:20
-      //   },
-      //   labels: {
-      //     style: { color: "#6A6A75" },
-      //   },
-      //   gridLineWidth: 0,
-      //   opposite: false, // Trục Y bên trái
-      // },
       {
         title: {
           text: 'price <br/> ($)',
@@ -114,24 +99,19 @@ const CombinedChart = ({  newDataLine }) => {
         crosshair: {
           width: 1,
           color: "#90909C",
-          dashStyle: "Dash", // Đường nét đứt
+          dashStyle: "Dash",
           zIndex: 5,
         },
         labels: {
           style: { color: "#6A6A75", fontSize: "12px", fontWeight: "400", lineHeight: "18px" },
         },
         gridLineWidth: 0,
-        opposite: false, // Trục Y bên phải
+        opposite: false,
         min: minY,
         max: maxY,
       },
     ],
     plotOptions: {
-      // column: {
-      //   groupPadding: 0, // Adjust this value to control space between column groups
-      //   pointPadding: 0.05, // Adjust this value to control space between columns
-      //   borderWidth: 0
-      // },
       area: {
         fillColor: {
           linearGradient: [0, 0, 0, 350],
@@ -141,10 +121,10 @@ const CombinedChart = ({  newDataLine }) => {
           ],
         },
         marker: {
-          enabled: false, // Ẩn các nốt
+          enabled: false, 
           states: {
             hover: {
-              enabled: true, // Hiện các nốt khi trỏ vào
+              enabled: true, 
             },
           },
         },
@@ -156,10 +136,10 @@ const CombinedChart = ({  newDataLine }) => {
       verticalAlign: "top",
       layout: "vertical",
       borderRadius: 5,
-      x: -35, // Điều chỉnh vị trí ngang của legend
-      y: 10, // Điều chỉnh vị trí dọc của legend
-      floating: true, // Đặt legend nằm trong phần plot của chart
-      backgroundColor: 'rgba(255, 255, 255, 0.1)', // Màu nền của legend
+      x: -35,
+      y: 10, 
+      floating: true,
+      backgroundColor: 'rgba(255, 255, 255, 0.1)', 
       itemStyle: {
         color: "#ffffff",
       },
@@ -181,17 +161,16 @@ const CombinedChart = ({  newDataLine }) => {
       },
     ],
     tooltip: {
-      useHTML: true, // Cho phép sử dụng HTML
+      useHTML: true,
       stickOnContact: true,
       formatter: function () {
-        const isTwitterTime = this.x === tweetTimestamp; // Kiểm tra thời gian trùng với Twitter
+        const isTwitterTime = this.x === tweetTimestamp;
         let tooltipHtml = `<b>${Highcharts.dateFormat("%Y-%m-%d %H:%M", this.x)}</b><br/>`;
 
         this.points.forEach((point) => {
           tooltipHtml += `<span style="color:${point.color}">\u25CF</span> ${point.series.name}: <b>${point.y}</b><br/>`;
         });
 
-        // Thêm thông tin Twitter nếu thời gian khớp
         if (isTwitterTime) {
           tooltipHtml += `
             <br/>

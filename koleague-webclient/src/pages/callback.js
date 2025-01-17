@@ -55,34 +55,6 @@ const CallBack = () => {
 				return
 			}
 
-
-			// if (!data.data) {
-			//   toast.error("Please check your twitter account!")
-			//   toast.dismiss(loading)
-			//   return
-			// }
-
-			// const { twitter_uid, twitter_screen_name} = data?.data?.airdrop || {}
-			// const { data: airdrop } = await shareService.getAccount({
-			//   "populate": "*",
-			// "sort": "createdAt" + ":desc",
-			// "filters[twitter_uid][$eq]": localStorage.getItem("twitter_uid"),
-			// })
-
-			// const res = await shareService.postAccount(
-			// 	{
-			// 		data: {
-			// 		"twitter_uid": data?.data?.airdrop?.id,
-			// 		"ref_code": new Proxy(new URLSearchParams(sessionStorage.getItem("current_ref")), {
-			// 			get: (searchParams, prop) => searchParams.get(prop),
-			// 		})?.ref,
-			// 		"twitter_screen_name": data?.data?.airdrop?.username,
-			// 		}
-			// 	},
-			// )
-			// console.log('res', res)
-			// window.location.href = "/"
-
 		} catch (err) {
 			console.log('err', err)
 			toast.error("Please check your twitter account!")

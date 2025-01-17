@@ -18,12 +18,6 @@ const LineChartHomepage = ({ data, title = "price" }) => {
   }
 
   const options = {
-    // title: {
-    //   text: 'My chart'
-    // },
-    // series: [{
-    //   data: [1, 2, 3]
-    // }]
     chart: {
       type: 'spline',
       height: 500,
@@ -58,13 +52,6 @@ const LineChartHomepage = ({ data, title = "price" }) => {
       text: ''
     },
     xAxis: {
-      // categories: [
-      //   'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      //   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
-      // ],
-      // accessibility: {
-      //   description: 'Months of the year'
-      // },
       labels: {
         style: {
           color: '#FAFAFA'
@@ -176,22 +163,13 @@ const LineChartHomepage = ({ data, title = "price" }) => {
       color: item.color
 
     })),
-      // {
-      //   name: 'FDV',
-      //   marker: {
-      //     symbol: 'circle'
-      //   },
-      //   data: renderdata(),
-      //   color: "#22C55E"
-      // }
-    
     navigator: {
       enabled: true,
       xAxis: {
         labels: {
           style: {
-            color: '#FAFAFA' ,// Màu chữ, có thể đổi sang màu mong muốn
-            textOutline: 'none' // Loại bỏ viền trắng
+            color: '#FAFAFA' ,
+            textOutline: 'none' 
           }
         },
         gridLineWidth: 0.25,

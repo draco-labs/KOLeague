@@ -101,18 +101,6 @@ export default function Chat() {
             } catch (error) {
                 console.log(error, "error")
             }
-            // let accountPk = null;
-            // if (false) { // dùng pk
-            //     const wallet = {
-            //         accountAddress: '',
-            //         privateKey: ''
-            //     }
-            //     accountPk = new Account(provider, wallet.accountAddress, wallet.privateKey, "1", constants.TRANSACTION_VERSION.V3,);
-            // }
-            // const data = await swapToken(0.5, 'STRK', 'USDC', false ? accountPk : account)
-            // // const data = await transfer(0.5, TOKEN_ADDRESS_CONSTANT['STRK'], "0x07351c67f903041610b0e3216829d26afd0b8e9dd525e3b8762758aa9390894e", false ? accountPk : account)
-            // console.log('data', data)
-
             const res = await fetch(`/api/${agentId}/message`, {
                 method: "POST",
                 body: formData,
@@ -120,12 +108,8 @@ export default function Chat() {
             return res.json();
         },
         onSuccess: (data) => {
-            console.log('data', data)
-            // return
             if (data.bot) {
                 if (data?.top_kol?.length > 0) {
-                    console.log("Xử lí top KOL")
-                    // console.log()
                     const newMessages = [...messages]
                     newMessages.push({
                         user: "dracolab",
@@ -134,15 +118,10 @@ export default function Chat() {
                         isTopKOL: true,
                         data: data?.top_kol,
                     })
-                    // setTopKOL(data?.top_kol);
-                    // setTopCoin(null);
-                    // setTopToken(null);
                     setMessages(newMessages);
-                    // return setTopKOL(data?.top_kol);
                     return;
                 }
                 if (data?.top_10_coins?.length > 0) {
-                    console.log("Xử lí top token")
                     const newMessages = [...messages]
                     newMessages.push({
                         user: "dracolab",
@@ -156,7 +135,6 @@ export default function Chat() {
                 }
 
                 if (data?.top_tokens?.length > 0) {
-                    console.log("Xử lí top token")
                     const newMessages = [...messages]
                     newMessages.push({
                         user: "dracolab",
@@ -165,9 +143,6 @@ export default function Chat() {
                         isTopToken: true,
                         data: data?.top_tokens,
                     })
-                    // setTopKOL(data?.top_kol);
-                    // setTopCoin(null);
-                    // setTopToken(null);
                     setMessages(newMessages);
                     return
                 }
@@ -192,7 +167,7 @@ export default function Chat() {
                         newMessages.push({
                             user: "dracolab",
                             action: "NONE",
-                            text: data?.message || "2222222222222222222222"
+                            text: data?.message
                         })
                         setMessages(newMessages);
                     }
@@ -219,7 +194,7 @@ export default function Chat() {
                         newMessages.push({
                             user: "dracolab",
                             action: "NONE",
-                            text: data?.message || "Conenttttttttttttttttt"
+                            text: data?.message
                         })
                         setMessages(newMessages);
                     }

@@ -24,27 +24,25 @@ const ColumnChart = ({dataColumn }) => {
   const options = {
     chart: {
       type: 'column',
-      backgroundColor: 'transparent', // Background của toàn bộ chart
-      plotBackgroundColor: '#0d0d15', // Background chỉ áp dụng trong phần chart
+      backgroundColor: 'transparent',
+      plotBackgroundColor: '#0d0d15',
       plotBorderWidth: 1,
       plotBorderColor: "#202031",
       height: 225,
     },
     title: {
-      text: null, // Không hiển thị tiêu đề
+      text: null,
     },
     xAxis: {
       type: 'datetime',
       visible: false,
       labels: {
-        enabled: false, // Ẩn nhãn trục x
+        enabled: false,
       },
     },
     yAxis: [
       {
         title: {
-          // text: "Volume (mm)",
-          // style: { color: "#ffffff" },
           enabled: false,
         },
         labels: {
@@ -76,11 +74,11 @@ const ColumnChart = ({dataColumn }) => {
         data: dataFormat,
         zones: [
           {
-            value: 0, // Dưới giá trị này, màu sẽ là "#e1548B"
+            value: 0,
             color: "#e1584B"
           },
           {
-            color: "#08EF46" // Trên giá trị này, màu sẽ là "#08EF46"
+            color: "#08EF46"
           }
         ],
         yAxis: 0,

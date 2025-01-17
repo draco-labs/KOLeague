@@ -167,5 +167,3 @@ export const transfer = async (amount, tokenAddress, recipient, account) => {
 }
 
 export const formatResponseTokenInOut = (token) => token === "None" ? null : token
-
-// start(1, 'STRK', 'USDC')

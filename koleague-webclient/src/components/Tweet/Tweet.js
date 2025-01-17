@@ -106,7 +106,7 @@ const Tweet = ({tweetId, data}) => {
                 open={openImage}
                 handleCancel={() => {
                     setOpenImage(false);
-                    setIsLoading(false); // Đảm bảo reset trạng thái khi đóng modal
+                    setIsLoading(false);
                 }}
                 className="w-fit"
                 closed={false}
@@ -122,12 +122,12 @@ const Tweet = ({tweetId, data}) => {
                         height={900}
                         className={`object-contain w-full h-full max-h-[900px] ${isLoading ? "hidden" : "block"}`}
                         onLoad={() => {
-                            setIsLoading(false); // Tắt trạng thái loading khi ảnh tải xong
+                            setIsLoading(false);
                             console.log("Image loaded");
                         }}
                         onError={() => {
                             console.error("Image failed to load");
-                            setIsLoading(false); // Tắt loading ngay cả khi lỗi
+                            setIsLoading(false);
                         }}
                     />
 

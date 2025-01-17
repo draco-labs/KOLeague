@@ -22,9 +22,9 @@ const showToast = {
         toast.error(
             <div class="self-stretch justify-between items-center gap-4 flex whitespace-nowrap ">
                 <span className='absolute top-[6px] right-2 text-[#FAFAFA] cursor-pointer'onClick={() => {
-                const toastElement = document.querySelector('.toast-error'); // Lấy phần tử toast
+                const toastElement = document.querySelector('.toast-error');
                 if (toastElement) {
-                  toastElement.classList.add('toast-closing'); // Thêm lớp 'toast-closing' để kích hoạt animation
+                  toastElement.classList.add('toast-closing');
                   setTimeout(() => {
                     toast.dismiss(); 
                   }, 100);
@@ -35,11 +35,11 @@ const showToast = {
                   {message2 && <div className='self-stretch text-xs font-medium text-[#FAFAFA] leading-tight'>{message2}</div>}
                 </div>
                 {buttonText && <div className="py-1 px-3 rounded-md border border-foreground justify-center items-center gap-2.5 flex cursor-pointer" onClick={() => {
-                const toastElement = document.querySelector('.toast-error'); // Lấy phần tử toast
+                const toastElement = document.querySelector('.toast-error');
                 if (toastElement) {
-                  toastElement.classList.add('toast-closing'); // Thêm lớp 'toast-closing' để kích hoạt animation
+                  toastElement.classList.add('toast-closing');
                   setTimeout(() => {
-                    toast.dismiss(); // Sau 0.5s (thời gian animation), xóa toast
+                    toast.dismiss();
                   }, 100);
                 }
             }}>

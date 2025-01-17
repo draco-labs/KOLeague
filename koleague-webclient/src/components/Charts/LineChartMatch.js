@@ -52,7 +52,7 @@ const LineChartMatch = ({data, result}) => {
       type: 'datetime',
       visible: false,
       labels: {
-        enabled: false, // Ẩn nhãn trục x
+        enabled: false,
       },    
       lineColor: '#FF4D4D',
       lineWidth: 1,
@@ -112,7 +112,7 @@ const LineChartMatch = ({data, result}) => {
           x: 0, 
           y: -5, 
           formatter: function () {
-            const icon = chartData.find(item => item[0] === this.x)?.[2]?.custom; // Tìm icon tương ứng
+            const icon = chartData.find(item => item[0] === this.x)?.[2]?.custom;
             return icon
               ? `<h1 style="color: #09090b; display: inline-block;
     width: 20px;">.</h1><img src="${icon}" alt="icon" style="border-radius:50%; width: 20px; height: 20px;" />`

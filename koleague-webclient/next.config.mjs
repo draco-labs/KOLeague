@@ -11,36 +11,25 @@ if (envs) {
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // reactStrictMode: true,
-  // async redirects() {
-  //   return [
-  //     {
-  //       source: '/',
-  //       destination: '/leaderboard1',
-  //       permanent: true,
-  //     },
-  //   ]
-  // },
   async headers() {
     return [
       {
-        // Áp dụng cho tất cả các route
         source: '/(.*)',
         headers: [
           {
             key: 'X-Frame-Options',
-            value: 'DENY', // Hoặc 'SAMEORIGIN' nếu bạn muốn cho phép từ cùng domain
+            value: 'DENY',
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors 'self'", // Chỉ cho phép nhúng từ cùng domain
+            value: "frame-ancestors 'self'", 
           },
         ],
       },
     ];
   },
   images: {
-    domains: ['pbs.twimg.com', 'coin-images.coingecko.com', 'minio.dev.ftech.ai'],
+    domains: ['pbs.twimg.com', 'coin-images.coingecko.com'],
   },
 };
 

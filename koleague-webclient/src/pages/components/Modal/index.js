@@ -2,20 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import close from "../../../assets/images/close.svg"
 
-// interface ModalProps {
-//   display?: boolean
-//   open: boolean
-//   title?: string
-//   children?: JSX.Element | undefined | Array<JSX.Element> | string
-//   key?: string
-//   handleConfirm?: any
-//   handleCancel?: () => void
-//   confirmButtonTitle?: string
-//   className?: string
-//   disabled?: boolean
-//   hidden?: number
-// }
-
 const Modal = ({
   open, 
   title,

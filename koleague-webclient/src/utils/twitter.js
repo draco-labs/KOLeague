@@ -31,12 +31,4 @@ export const twitterAuth = () => {
 			(returnUrl), "_blank")
 	else window.location.href = ("https://x.com/i/oauth2/authorize") + returnUrl
 
-	// let a = document.createElement("a");
-	// document.body.appendChild(a);
-	// a.style = "display: none";
-	// a.href = ("https://twitter.com/i/oauth2/authorize") +
-	// (returnUrl);
-	// a.click();
-	// document.body.removeChild(a);
-
 }
