@@ -1,3 +1,5 @@
+![Clipboard - January 17, 2025 9_51 AM](https://github.com/user-attachments/assets/59f73401-8bac-4e41-8413-deea805a0286)
+
 # KOLeague
 
 ## Project Description
@@ -23,7 +25,7 @@ KOLeague leverages a network of specialized agents to streamline operations and 
 2. **On-Chain Agent**  
    - **Purpose**: Analyzes Starknet blockchain data to uncover token swap opportunities and provide on-chain insights.
    - **Key Features**:
-     - **Data Crawling**: Fetches real-time on-chain data, focusing on token swap activities.
+     - **Data Crawling**: Fetches real-time on-chain data using Juno node (developed by Nethermind), focusing on token swap activities.
      - **Opportunity Detection**: Identifies promising token pairs for swaps based on recent trends and performance.
      - **Analytics**: Provides additional insights, including total transactions and swapping volumes within the last 24 hours.
 
