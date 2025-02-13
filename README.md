@@ -17,7 +17,7 @@ KOLeague is structured into multiple independent modules. Each module must be us
 - [`kol_ranking`](https://github.com/draco-labs/KOLeague/tree/main/kol_ranking): Implements the KOL ranking algorithm by evaluating influencers based on credibility and market accuracy.
 - [`agent/autogen-framework`](https://github.com/draco-labs/KOLeague/tree/main/agent/autogen-framework): Uses AutoGen to facilitate AI-driven interactions for market insights.
 - [`agent/eliza-framework`](https://github.com/draco-labs/KOLeague/tree/main/agent/eliza-framework): Provides a conversational agent based on the ELIZA framework for market discussions.
-- [`onchain_toolkit`](https://github.com/draco-labs/KOLeague/tree/main/onchain_toolkit): Analyzes on-chain data and provides insights into trending token swaps.
+- [`onchain_toolkit`](https://github.com/draco-labs/KOLeague/tree/main/onchain_toolkit): Analyzes on-chain data and provides insights into trending token, can swap token also.
 - [`webclient`](https://github.com/draco-labs/KOLeague/tree/main/webclient): A front-end interface to interact with the KOLeague AI.
 
 ## Installation & Usage
