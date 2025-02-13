@@ -69,12 +69,3 @@ The `critical_thinking_agent.py` script is a FastAPI-based service that integrat
    - **Rebuttal Agents**: Counter the opposing perspective.
    - **Judge Agent**: Concludes with a buy/sell recommendation.
 4. **Store & Cache Results**: Saves the analysis for future reference using MongoDB and Redis.
-
-## Future Enhancements
-- Add support for more data sources (Twitter, TradingView, etc.).
-- Implement real-time analysis with WebSockets.
-- Enhance agent reasoning with reinforcement learning.
-
-## License
-This project is licensed under the MIT License.
-
