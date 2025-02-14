@@ -4,6 +4,9 @@
 
 KOLeague is an AI-powered decision-making agent designed to analyze market trends, rank Key Opinion Leaders (KOLs), and provide insights based on social media sentiment and critical thinking frameworks.
 
+![image](https://github.com/user-attachments/assets/3d9e0463-7ac0-468b-ad1e-d10bc5887ffc)
+
+
 ## Features
 - **KOL Ranking Algorithm**: Evaluates and ranks KOLs based on their market predictions and social influence.
 - **Social Insight Extraction**: Collects and analyzes market sentiment from various sources.
