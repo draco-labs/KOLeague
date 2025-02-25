@@ -1,6 +1,10 @@
 
 ![image](https://github.com/user-attachments/assets/3d9e0463-7ac0-468b-ad1e-d10bc5887ffc)
 
+![image](https://github.com/user-attachments/assets/450d78f3-c3b8-4ce2-9d96-46f96fd37550)
+
+![image](https://github.com/user-attachments/assets/898962c1-9951-45ac-9a88-24e7b599af3e)
+
 
 # KOLeague
 
