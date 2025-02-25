@@ -1,17 +1,3 @@
-# Project Preview
-
-## The Workflow
-![image](https://github.com/user-attachments/assets/3d9e0463-7ac0-468b-ad1e-d10bc5887ffc)
-
-## The Agent
-![image](https://github.com/user-attachments/assets/898962c1-9951-45ac-9a88-24e7b599af3e)
-
-## The KOL Ranking 
-![image](https://github.com/user-attachments/assets/450d78f3-c3b8-4ce2-9d96-46f96fd37550)
-
-## Insight of Each KOL
-![image](https://github.com/user-attachments/assets/75d7318e-0334-4019-8877-6e7e6fb1e31e)
-
 
 # KOLeague
 
@@ -23,6 +9,25 @@ KOLeague is an AI-powered decision-making agent designed to analyze market trend
 - **Critical Thinking Framework**: Uses AI to simulate internal debates and make data-driven decisions.
 - **On-Chain Integration**: Connects with decentralized exchanges (DEX) to highlight trending tokens.
 - **Web Client**: Provides a user-friendly interface for interaction with the AI agent.
+
+
+## Project Preview
+
+
+### The Workflow
+![image](https://github.com/user-attachments/assets/3d9e0463-7ac0-468b-ad1e-d10bc5887ffc)
+
+### The Agent
+![image](https://github.com/user-attachments/assets/898962c1-9951-45ac-9a88-24e7b599af3e)
+
+### The KOL Ranking 
+![image](https://github.com/user-attachments/assets/450d78f3-c3b8-4ce2-9d96-46f96fd37550)
+
+### Insight of Each KOL
+![image](https://github.com/user-attachments/assets/75d7318e-0334-4019-8877-6e7e6fb1e31e)
+
+
+
 
 ## Folder Structure
 KOLeague is structured into multiple independent modules. Each module must be used separately by navigating to its respective directory.
