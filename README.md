@@ -13,11 +13,13 @@ KOLeague is an AI-powered decision-making agent designed to analyze market trend
 
 ## Project Preview
 
+### The Agent's prediction
+![image](https://github.com/user-attachments/assets/459cee69-8af8-4669-8ae0-b16998c19b02)
 
 ### The Workflow
 ![image](https://github.com/user-attachments/assets/3d9e0463-7ac0-468b-ad1e-d10bc5887ffc)
 
-### The Agent
+### The Chat layout
 ![image](https://github.com/user-attachments/assets/898962c1-9951-45ac-9a88-24e7b599af3e)
 
 ### The KOL Ranking 
